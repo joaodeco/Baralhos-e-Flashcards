@@ -1,9 +1,14 @@
 const prompt = require ('prompt-sync')()
-const criarBaralho = require ('./baralho/criarBaralho')
+
 let { baralhos } = require ('./data')
+const criarBaralho = require ('./baralho/criarBaralho')
 const listarBaralhos = require ('./baralho/listarBaralhos')
 const atualizarBaralho = require ('./baralho/atualizarBaralho')
 const deletarBaralho = require ('./baralho/deletarBaralho')
+
+let { flashcards } = require ('./data')
+const criarFlashcard = require ('./flashcard/criarFlashcard')
+const listarFlashcard = require ('./flashcard/listarFlashcards')
 
 function menuPrincipal(){
     console.log('Esses são as nossas opções, escolha uma delas para poder gerenciar seus baralhos ou flashcards!!')
@@ -86,8 +91,44 @@ function gerenciarFlashcards(){
         6. Buscar Flashcard Por ID
         7. Listar Flashcard
         8. Listar Flashcard Por Baralho
+        0. Voltar ao Menu
     `)
-    let opcao
+    let opcaoFlashcard = prompt('Qual sua opção: ')
+
+    switch(opcaoFlashcard){
+        case '1':
+            atualizarFlashcard()
+            break
+        case '2':
+            buscarFLashcardPorBaralho()
+            break
+        case '3':
+            buscarFLashcardPorPergunta()
+            break
+        case '4':
+            criarFlashcard(flashcards, menuPrincipal)
+            break
+        case '5':
+            deletarFlashcard()
+            break
+        case '6':
+            findFlashcardIndexById()
+            break
+        case '7':
+            listarFlashcard(flashcards)
+            menuPrincipal()
+            break
+        case '8':
+            listarFlashcardPorBaralho()
+            break
+        case '0':
+            menuPrincipal()
+            break
+        default:
+            console.log('ERRO > OPÇÂO INVALIDA, TENTE NOVAMENTE !')
+            gerenciarFlashcards()
+            break
+    }
 }
 
 menuPrincipal()
