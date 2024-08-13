@@ -1,5 +1,3 @@
-const baralhos = require ('./data')
-const flashcards = require ('./data')
 const prompt = require ('prompt-sync')()
 
 function menuPrincipal(){
@@ -83,3 +81,5 @@ function gerenciarFlashcards(){
         8. Listar Flashcard Por Baralho
     `)
 }
+
+menuPrincipal()
