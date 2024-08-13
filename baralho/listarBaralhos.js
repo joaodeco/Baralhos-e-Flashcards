@@ -1,5 +1,5 @@
 
-function listarBaralhos(baralhos, callback){
+function listarBaralhos(baralhos){
     for(let i = 0; i < baralhos.length;i ++){
         
         baralho = baralhos[i]
@@ -9,7 +9,6 @@ function listarBaralhos(baralhos, callback){
         Titulo: ${baralho.titulo}
         `)
     }
-    callback()
 }
 
 module.exports = listarBaralhos

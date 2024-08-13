@@ -1,8 +1,9 @@
 const prompt = require ('prompt-sync')()
 const criarBaralho = require ('./baralho/criarBaralho')
-let baralhos = require ('./data')
+let { baralhos } = require ('./data')
 const listarBaralhos = require ('./baralho/listarBaralhos')
 const atualizarBaralho = require ('./baralho/atualizarBaralho')
+const deletarBaralho = require ('./baralho/deletarBaralho')
 
 function menuPrincipal(){
     console.log('Esses são as nossas opções, escolha uma delas para poder gerenciar seus baralhos ou flashcards!!')
@@ -26,7 +27,7 @@ function menuPrincipal(){
         case '0':
             break
         default:
-            throw new Error ('ERRO > OPÇÂO INVALIDA, TENTE NOVAMENTE !')
+            console.log('ERRO > OPÇÂO INVALIDA, TENTE NOVAMENTE !')
             menuPrincipal()
     }
 }
@@ -48,22 +49,24 @@ function gerenciarBaralhos(){
 
     switch(opcaoBaralhos){
         case '1':
-            atualizarBaralho(baralhos, menuPrincipal)
+            atualizarBaralho(menuPrincipal)
             break
         case '2':
             criarBaralho(baralhos, menuPrincipal)
             break
         case '3':
             deletarBaralho()
+            menuPrincipal()
             break
         case '4':
-            listarBaralhos(baralhos, menuPrincipal)
+            listarBaralhos(baralhos)
+            menuPrincipal()
             break
         case '0':
             menuPrincipal()
             break
         default:
-            throw new Error ('ERRO > OPÇÂO INVALIDA, TENTE NOVAMENTE !')
+            console.log('ERRO > OPÇÂO INVALIDA, TENTE NOVAMENTE !')
             gerenciarBaralhos()
             break
     }
@@ -84,6 +87,7 @@ function gerenciarFlashcards(){
         7. Listar Flashcard
         8. Listar Flashcard Por Baralho
     `)
+    let opcao
 }
 
 menuPrincipal()

@@ -8,4 +8,4 @@ let flashcards = [
     {id: 2, pergunta: 'Qual o animal mais chique do mundo ?', resposta: 'O porco, pois ele vive no chiqueiro!!', idBaralho: '2'}
 ]
 
-module.exports = baralhos, flashcards
+module.exports = {baralhos, flashcards}
