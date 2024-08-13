@@ -1,4 +1,8 @@
 const prompt = require ('prompt-sync')()
+const criarBaralho = require ('./baralho/criarBaralho')
+let baralhos = require ('./data')
+const listarBaralhos = require ('./baralho/listarBaralhos')
+const atualizarBaralho = require ('./baralho/atualizarBaralho')
 
 function menuPrincipal(){
     console.log('Esses são as nossas opções, escolha uma delas para poder gerenciar seus baralhos ou flashcards!!')
@@ -44,16 +48,16 @@ function gerenciarBaralhos(){
 
     switch(opcaoBaralhos){
         case '1':
-            atualizarBaralho()
+            atualizarBaralho(baralhos, menuPrincipal)
             break
         case '2':
-            criarBaralho()
+            criarBaralho(baralhos, menuPrincipal)
             break
         case '3':
             deletarBaralho()
             break
         case '4':
-            listarBaralhos()
+            listarBaralhos(baralhos, menuPrincipal)
             break
         case '0':
             menuPrincipal()
