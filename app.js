@@ -90,7 +90,7 @@ function gerenciarFlashcards(){
         4. Criar Flashcard
         5. Deletar Flashcard
         6. Buscar Flashcard Por ID
-        7. Listar Flashcard
+        7. Listar Flashcards
         8. Listar Flashcard Por Baralho
         0. Voltar ao Menu
     `)
@@ -110,7 +110,7 @@ function gerenciarFlashcards(){
             criarFlashcard(flashcards, menuPrincipal)
             break
         case '5':
-            deletarFlashcard()
+            deletarFlashcard(menuPrincipal)
             break
         case '6':
             findFlashcardIndexById()
