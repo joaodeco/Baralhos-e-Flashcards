@@ -1,5 +1,4 @@
-
-function listarFlashcard(flashcards){
+ function listarFlashcard(flashcards){
     for(let i = 0; i < flashcards.length;i ++){
         
         flashcard = flashcards[i]

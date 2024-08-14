@@ -9,6 +9,7 @@ const deletarBaralho = require ('./baralho/deletarBaralho')
 let { flashcards } = require ('./data')
 const criarFlashcard = require ('./flashcard/criarFlashcard')
 const listarFlashcard = require ('./flashcard/listarFlashcards')
+const deletarFlashcard = require ('./flashcard/deletarFlashcard')
 
 function menuPrincipal(){
     console.log('Esses são as nossas opções, escolha uma delas para poder gerenciar seus baralhos ou flashcards!!')
