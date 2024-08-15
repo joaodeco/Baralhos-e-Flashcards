@@ -12,7 +12,7 @@ const listarFlashcard = require ('./flashcard/listarFlashcards')
 const deletarFlashcard = require ('./flashcard/deletarFlashcard')
 const atualizarFlashcard = require ('./flashcard/atualizarFlashcard')
 const listarFlashcardPorBaralho = require ('./flashcard/listarFlashcardPorBaralho')
-const listarFlashcardPorPergunta = require ('./flashcard/buscarFlashCardPorPergunta')
+const listarFlashcardPorPergunta = require ('./flashcard/listarFlashCardPorPergunta')
 
 function menuPrincipal(){
     console.log('Esses são as nossas opções, escolha uma delas para poder gerenciar seus baralhos ou flashcards!!')
@@ -88,13 +88,11 @@ function gerenciarFlashcards(){
     -x- Menu de Gerenciamento de Flashcards -x-
 
         1. Atualizar Flashcard
-        2. Buscar Flashcard por Baralho
-        3. Buscar Flashcard por pergunta
-        4. Criar Flashcard
-        5. Deletar Flashcard
-        6. Buscar Flashcard Por ID
-        7. Listar Flashcards
-        8. Listar Flashcard Por Baralho
+        2. Buscar Flashcard por pergunta
+        3. Criar Flashcard
+        4. Deletar Flashcard
+        5. Listar Flashcards
+        6. Listar Flashcard Por Baralho
         0. Voltar ao Menu
     `)
     let opcaoFlashcard = prompt('Qual sua opção: ')
@@ -104,25 +102,19 @@ function gerenciarFlashcards(){
             atualizarFlashcard(menuPrincipal)
             break
         case '2':
-            buscarFLashcardPorBaralho()
+            listarFlashcardPorPerguntaFLashcardPorPergunta()
             break
         case '3':
-            buscarFLashcardPorPergunta()
-            break
-        case '4':
             criarFlashcard(flashcards, menuPrincipal)
             break
-        case '5':
+        case '4':
             deletarFlashcard(menuPrincipal)
             break
-        case '6':
-            findFlashcardIndexById()
-            break
-        case '7':
+        case '5':
             listarFlashcard(flashcards)
             menuPrincipal()
             break
-        case '8':
+        case '6':
             listarFlashcardPorBaralho(menuPrincipal)
             break
         case '0':

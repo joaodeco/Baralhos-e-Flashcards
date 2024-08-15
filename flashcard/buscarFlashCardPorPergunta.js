@@ -5,12 +5,13 @@ function listarFlashcardPorPergunta(callback){
 
     let opçãoListarPorPergunta = prompt('Digite a pergunta do flashcard para listar seus flashcards: ')
 
-    if(flashcards.findIndex(flash => flash.pergunta == opçãoListarPorBaralhos) < 0){
+    let index = flashcards.findIndex(flash => flash.pergunta == opçãoListarPorBaralhos) < 0
+    if(index < 0){
 
         console.log('Erro voltando para o menu')
     } else{
 
-        console.log(flashcards[opçãoListarPorPergunta])
+        console.log(flashcards[index])
     }
     callback()
 }
