@@ -9,7 +9,7 @@ function atualizarFlashcards(callback){
     opcaoEditar = flashcards.findIndex(flashcad => flashcad.id == opcaoEditar)
     
     let novaPergunta = prompt('Qual a nova pergunta do seu flashcard: ')
-    let novaResposta = prompt('Qual a nova resposta do seu flashcard')
+    let novaResposta = prompt('Qual a nova resposta do seu flashcard: ')
 
     flashcards[opcaoEditar].pergunta = novaPergunta
     flashcards[opcaoEditar].resposta = novaResposta

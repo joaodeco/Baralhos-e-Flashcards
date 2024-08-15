@@ -1,4 +1,3 @@
-
 function listarBaralhos(baralhos){
     for(let i = 0; i < baralhos.length;i ++){
         

@@ -10,7 +10,9 @@ let { flashcards } = require ('./data')
 const criarFlashcard = require ('./flashcard/criarFlashcard')
 const listarFlashcard = require ('./flashcard/listarFlashcards')
 const deletarFlashcard = require ('./flashcard/deletarFlashcard')
-const atualizarBaralho = require ('./flashcard/atualizarFlashcard')
+const atualizarFlashcard = require ('./flashcard/atualizarFlashcard')
+const listarFlashcardPorBaralho = require ('./flashcard/listarFlashcardPorBaralho')
+const listarFlashcardPorPergunta = require ('./flashcard/buscarFlashCardPorPergunta')
 
 function menuPrincipal(){
     console.log('Esses são as nossas opções, escolha uma delas para poder gerenciar seus baralhos ou flashcards!!')
@@ -99,7 +101,7 @@ function gerenciarFlashcards(){
 
     switch(opcaoFlashcard){
         case '1':
-            atualizarFlashcard()
+            atualizarFlashcard(menuPrincipal)
             break
         case '2':
             buscarFLashcardPorBaralho()
@@ -121,7 +123,7 @@ function gerenciarFlashcards(){
             menuPrincipal()
             break
         case '8':
-            listarFlashcardPorBaralho()
+            listarFlashcardPorBaralho(menuPrincipal)
             break
         case '0':
             menuPrincipal()
