@@ -102,7 +102,7 @@ function gerenciarFlashcards(){
             atualizarFlashcard(menuPrincipal)
             break
         case '2':
-            listarFlashcardPorPerguntaFLashcardPorPergunta()
+            listarFlashcardPorPergunta()
             break
         case '3':
             criarFlashcard(flashcards, menuPrincipal)
